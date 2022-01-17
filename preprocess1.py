@@ -2,8 +2,8 @@
 def prepro1(df1):
     import pandas as pd
     import string
-    #nltk.download('punkt')
-    #nltk.download('stopwords')
+    nltk.download('punkt')
+    nltk.download('stopwords')
     from nltk.corpus import stopwords
 
     #load data
