@@ -66,7 +66,9 @@ def prepro1(df1):
     import pickle
     vectorizer1=pickle.load(open('VZ1.pkl', 'rb'))
     test_vector = vectorizer1.transform(test_data)
-    model1=pickle.load(open('ET1.pkl', 'rb'))
+    import bz2
+    sfile = bz2.BZ2File('ET11', 'r')
+    model1=pickle.load(sfile)
     test_prediction = model1.predict(test_vector)
     return test_prediction
 

@@ -1,8 +1,9 @@
 
 def prepro2(df1):
     import string
-    #nltk.download('punkt')
-    #nltk.download('stopwords')
+    import nltk
+    nltk.download('punkt')
+    nltk.download('stopwords')
     from nltk.corpus import stopwords
     def strip_punctuations(data, column_name='text'):
       '''
@@ -56,7 +57,9 @@ def prepro2(df1):
     import pickle
     vectorizer1=pickle.load(open('VZ1.pkl', 'rb'))
     test_vector = vectorizer1.transform(test_data)
-    model1=pickle.load(open('ET1.pkl', 'rb'))
+    import bz2
+    sfile = bz2.BZ2File('ET11', 'r')
+    model1=pickle.load(sfile)
     test_prediction = model1.predict(test_vector)
     df4["Label"]=test_prediction
     return test_prediction,df4
