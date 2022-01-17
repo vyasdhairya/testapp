@@ -3,4 +3,5 @@ pandas
 streamlit
 pillow
 scikit-learn
+pickle
 nltk
