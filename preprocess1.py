@@ -2,6 +2,7 @@
 def prepro1(df1):
     import pandas as pd
     import string
+    import nltk
     nltk.download('punkt')
     nltk.download('stopwords')
     from nltk.corpus import stopwords
