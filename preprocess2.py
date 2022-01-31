@@ -62,5 +62,7 @@ def prepro2(df1):
     model1=pickle.load(sfile)
     test_prediction = model1.predict(test_vector)
     df4["Label"]=test_prediction
-    return test_prediction,df4
+    import numpy as np
+    score=np.amax(model1.predict_proba(test_vector))
+    return test_prediction,df4,score
 
