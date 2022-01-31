@@ -70,5 +70,7 @@ def prepro1(df1):
     sfile = bz2.BZ2File('ET11', 'r')
     model1=pickle.load(sfile)
     test_prediction = model1.predict(test_vector)
-    return test_prediction
+    import numpy as np
+    score=np.amax(model1.predict_proba(test_vector))
+    return test_prediction,score
 
